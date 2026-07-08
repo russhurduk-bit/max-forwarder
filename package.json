@@ -1,0 +1,21 @@
+{
+  "name": "max-forwarder",
+  "version": "1.0.0",
+  "description": "Two-way bridge between Max Messenger (web.max.ru) and Telegram, built on Playwright. Forwards messages and media in both directions with a forum-topic-per-chat mapping.",
+  "license": "MIT",
+  "type": "commonjs",
+  "engines": {
+    "node": ">=18"
+  },
+  "main": "max_bridge.js",
+  "scripts": {
+    "start": "node max_bridge.js",
+    "bridge": "node max_bridge.js",
+    "forwarder": "node max_forwarder.js",
+    "postinstall": "playwright install chromium"
+  },
+  "dependencies": {
+    "playwright": "^1.49.0",
+    "form-data": "^4.0.1"
+  }
+}

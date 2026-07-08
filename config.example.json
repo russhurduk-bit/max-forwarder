@@ -1,0 +1,21 @@
+{
+  "_comment": "Copy this file to config.json and fill in your values, OR provide the same values via environment variables (see .env.example). Environment variables take precedence over config.json. Never commit a real config.json — it is git-ignored.",
+
+  "_bridge_keys": "Used by max_bridge.js (two-way, forum-topic-per-chat mode):",
+  "telegram_forum_chat_id": "-1000000000000",
+  "telegram_admin_chat_id": "000000000",
+  "ignored_chats": [],
+
+  "_forwarder_keys": "Used by max_forwarder.js (one-way, group -> single chat mode):",
+  "max_groups": ["My Group Name", "Another Chat"],
+  "telegram_chat_id": "-1000000000000",
+
+  "_shared_keys": "Used by both scripts:",
+  "telegram_bot_token": "REPLACE_WITH_YOUR_BOT_TOKEN",
+  "check_interval_ms": 5000,
+  "session_dir": "./session",
+  "downloads_dir": "./downloads",
+  "screenshots_dir": "./screenshots",
+  "state_file": "./bridge_state.json",
+  "headless": true
+}

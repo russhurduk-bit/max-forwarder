@@ -1,0 +1,24 @@
+[Unit]
+Description=Max Messenger <-> Telegram Bridge (Two-Way)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+# Adjust these paths to wherever you cloned the repo:
+WorkingDirectory=/opt/max-forwarder
+EnvironmentFile=/opt/max-forwarder/.env
+Environment=NODE_OPTIONS=--max-old-space-size=512
+ExecStart=/usr/bin/node /opt/max-forwarder/max_bridge.js
+Restart=on-failure
+RestartSec=30
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=max-forwarder
+
+# Resource limits
+MemoryMax=1G
+CPUQuota=50%
+
+[Install]
+WantedBy=multi-user.target
